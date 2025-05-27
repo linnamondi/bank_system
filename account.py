@@ -72,7 +72,7 @@ class Account:
             print(f"Withdrawal: {amount}")
         print(f"Loan: {self.loan}")
         print(f"Balance: {self.get_balance()}")
-     def freeze_account(self):
+    def freeze_account(self):
         self.frozen = True
         return " your Account has been frozen"
     def unfreeze_account(self):
