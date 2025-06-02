@@ -49,7 +49,7 @@ class Account:
         self.__balance -= amount
         other_account._Account__balance += amount 
         self.__record_transaction(amount, "transfer", f"Transferred to {other_account.name}")
-        other_account.transactions.append(Transaction(amount, f"Received from {self.name}", "transfer"))
+        other_account.transactions.append(Transaction(amount, f"Received from {self.account_holder}", "transfer"))
         return f"Transferred ${amount} to {other_account.name}"
 
     def request_loan(self, amount):
@@ -86,7 +86,7 @@ class Account:
         return "Account has been closed"
 
     def generate_statement(self):
-        print(f"\nStatement for {self.name} (Account #{self.__account_number})")
+        print(f"\nStatement for {self.account_holder} (Account #{self.__account_number})")
         for text in self.transactions:
             print(txt)
         print(f"Balance: ${self.__balance:.2f} | Loan: ${self.__loan:.2f}")
