@@ -1,6 +1,6 @@
 class Account:
     def __init__(self,name):
-        self.name
+        self.name=name
         self.deposits=[]
         self.withdrawals=[]
         self.statement=[]
@@ -62,7 +62,7 @@ class Account:
             self.withdrawals.append(amount)
             self.statement.append(f"loan repaid ${amount}")
     def view_details(self):
-        return f"owner:{self.name},balance:{self.get_balance(),loan {self.loan}}"
+        return f"owner:{self.name},balance:{self.get_balance()}{self.loan}"
     def generate_statement(self):
 
         print(f" this is a  Statement for {self.name}")
@@ -85,6 +85,4 @@ class Account:
         self.loan = 0
         return "Your Account has been closed"
 
-
-   
 
